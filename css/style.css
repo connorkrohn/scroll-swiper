@@ -1,0 +1,69 @@
+/* GENERAL CSS */
+
+.cks-slides img {
+	width: 100%;
+	height: 100%;
+}
+.cks-slides > button {
+	color: black;
+	background: #f2f2f2;
+	border-radius: var(--globalRadius);
+	border: none;
+	padding: 7px 10px;
+	font-weight: 500;
+	cursor: pointer;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.cks-slides > button:hover {
+	background: #e5e5e5;
+}
+.cont {
+	box-sizing: border-box;
+	max-width: var(--globalMaxWidth);
+	margin-inline: auto;
+	padding-inline: var(--globalPadding);
+	margin-top: 1rem;
+}
+body,
+body * {
+	font-family: Inter, sans-serif;
+	font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+}
+h1 {
+	font-size: 2rem;
+	font-weight: 900;
+}
+
+body {
+	background-color: white;
+	color: black;
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: white;
+	}
+	.cks-slides > button {
+		color: white;
+		background: #272727;
+	}
+	.cks-slides > button:hover {
+		background: #3f3f3f;
+	}
+	.ckSwiper .cks-prev,
+	.ckSwiper .cks-next {
+		color: white;
+		background: #272727;
+		background: black;
+		box-shadow: inset 0 0 0 1.6px white;
+	}
+	.ckSwiper .cks-prev:hover,
+	.ckSwiper .cks-next:hover {
+		color: white;
+		background: #3f3f3f;
+		box-shadow: inset 0 0 0 1.6px white;
+	}
+}
