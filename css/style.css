@@ -1,32 +1,26 @@
-/* GENERAL CSS */
+/* GENERAL CSS - START */
 
-.cks-slides img {
-	width: 100%;
-	height: 100%;
-}
-.cks-slides > button {
-	color: black;
-	background: #f2f2f2;
-	border-radius: var(--globalRadius);
-	border: none;
-	padding: 7px 10px;
-	font-weight: 500;
-	cursor: pointer;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
+:root {
+    --bgColor: white;
+    --textColor: black;
+    --btnColor: #f2f2f2;
+    --btnHover: #e5e5e5;
+    --globalMaxWidth: 1005px;
+	--globalPadding: clamp(9px, 2vw, 15px);
+	--globalRadius: 7px;
+	--globalProductTileMinWidth: 150px;
 }
 
-.cks-slides > button:hover {
-	background: #e5e5e5;
+body {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor);
+	color: var(--textColor);
 }
-.cont {
-	box-sizing: border-box;
-	max-width: var(--globalMaxWidth);
-	margin-inline: auto;
-	padding-inline: var(--globalPadding);
-	margin-top: 1rem;
-}
+
+/* FONT */
 body,
 body * {
 	font-family: Inter, sans-serif;
@@ -37,33 +31,43 @@ h1 {
 	font-weight: 900;
 }
 
-body {
-	background-color: white;
-	color: black;
+.cont {
+	box-sizing: border-box;
+	max-width: var(--globalMaxWidth);
+	margin-inline: auto;
+	padding-inline: var(--globalPadding);
+	margin-top: 1rem;
 }
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+.btn {
+	color: var(--textColor);
+	background: var(--btnColor);
+	border-radius: var(--globalRadius);
+	border: none;
+	padding: 7px 10px;
+	font-weight: 500;
+	cursor: pointer;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.btn:hover {
+	background: var(--btnHover);
+}
+
+/* DARK MODE */
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: black;
-		color: white;
-	}
-	.cks-slides > button {
-		color: white;
-		background: #272727;
-	}
-	.cks-slides > button:hover {
-		background: #3f3f3f;
-	}
-	.ckSwiper .cks-prev,
-	.ckSwiper .cks-next {
-		color: white;
-		background: #272727;
-		background: black;
-		box-shadow: inset 0 0 0 1.6px white;
-	}
-	.ckSwiper .cks-prev:hover,
-	.ckSwiper .cks-next:hover {
-		color: white;
-		background: #3f3f3f;
-		box-shadow: inset 0 0 0 1.6px white;
-	}
+    :root {
+    --bgColor: black;
+    --textColor: white;
+    --btnColor: #272727;
+    --btnHover: #3f3f3f;
+    }
 }
+
+/* GENERAL CSS - END */
