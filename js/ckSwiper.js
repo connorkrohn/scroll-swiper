@@ -168,7 +168,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	// remove scroll hint after scrolling
 	if (document.querySelector(".ckSwiper.cks-scrollhint")) {
 		for (const ckSwiper of document.querySelectorAll(".ckSwiper.cks-scrollhint")) {
-			ckSwiper.querySelector(".cks-slides").addEventListener("scroll", () => {
+			let ckSlides = ckSwiper.querySelector(".cks-slides");
+			// check if overflow is present - remove if not
+			if (ckSlides.scrollWidth <= ckSlides.clientWidth) return ckSwiper.classList.remove("cks-scrollhint");
+			ckSlides.addEventListener("scroll", () => {
 					ckSwiper.classList.remove("cks-scrollhint");
 				},
 			{ once: true });
