@@ -1,7 +1,8 @@
 /* SWIPERCSS - START */
 .scrollSwiper {
 	--ssMaxWidth: var(--globalMaxWidth, 1005px);
-	--ssPadding: var(--globalPadding, clamp(9px, 2vw, 15px));
+	--ssPaddingBlock: var(--globalPaddingBlock, 15px);
+  --ssPaddingInline: var(--globalPaddingInline, clamp(9px, 2vw, 15px));
 	--ssGap: var(--globalPadding, clamp(9px, 2vw, 15px));
 	--ssTilesMobile: 1.2;
 	--ssProductTilesMobile: 2.4;
@@ -35,9 +36,10 @@
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0 auto;
-	padding: var(--ssPadding);
-	scroll-padding-left: var(--ssPadding);
-	scroll-margin-top: var(--ssPadding);
+	padding-block: var(--ssPaddingBlock);
+  padding-inline: var(--ssPaddingInline);
+	scroll-padding-left: var(--ssPaddingInline);
+	scroll-margin-top: var(--ssPaddingInline); /* used in JS button nav */
 	overflow: hidden;
 	overflow-x: auto;
 	scroll-behavior: smooth;
@@ -54,7 +56,7 @@
 }
 
 .scrollSwiper .ss-slides > * {
-	--ssTileMinWidth: calc((100cqi - var(--ssPadding) - var(--ssGap)) / var(--ssTilesMobile));
+	--ssTileMinWidth: calc((100cqi - var(--ssPaddingInline) - var(--ssGap)) / var(--ssTilesMobile));
 	position: relative;
 	margin: 0;
 	overflow: hidden;
@@ -74,26 +76,26 @@
 
 /* SET TILE WIDTHS - START */
 .scrollSwiper.ss-6tile .ss-slides > * {
-	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPadding) * 2) - (var(--ssGap) * 5)) / 6);
+	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPaddingInline) * 2) - (var(--ssGap) * 5)) / 6);
 }
 .scrollSwiper.ss-5tile .ss-slides > * {
-	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPadding) * 2) - (var(--ssGap) * 4)) / 5);
+	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPaddingInline) * 2) - (var(--ssGap) * 4)) / 5);
 }
 .scrollSwiper.ss-4tile .ss-slides > * {
-	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPadding) * 2) - (var(--ssGap) * 3)) / 4);
+	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPaddingInline) * 2) - (var(--ssGap) * 3)) / 4);
 }
 .scrollSwiper.ss-3tile .ss-slides > * {
-	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPadding) * 2) - (var(--ssGap) * 2)) / 3);
+	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPaddingInline) * 2) - (var(--ssGap) * 2)) / 3);
 }
 .scrollSwiper.ss-2tile .ss-slides > * {
-	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPadding) * 2) - (var(--ssGap) * 1)) / 2);
+	--ssTileWidth: calc((var(--ssMaxWidth) - (var(--ssPaddingInline) * 2) - (var(--ssGap) * 1)) / 2);
 }
 .scrollSwiper.ss-1tile .ss-slides > * {
-	--ssTileWidth: calc(100cqi - (var(--ssPadding) * 2));
+	--ssTileWidth: calc(100cqi - (var(--ssPaddingInline) * 2));
 	--ssTileMinWidth: unset;
 }
 .scrollSwiper.ss-producttiles .ss-slides > * {
-	--ssTileMinWidth: calc((100cqi - var(--ssPadding) - var(--ssGap)) / var(--ssProductTilesMobile));
+	--ssTileMinWidth: calc((100cqi - var(--ssPaddingInline) - var(--ssGap)) / var(--ssProductTilesMobile));
 	min-width: var(--globalProductTileMinWidth);
 }
 /* SET TILE WIDTHS - END */
@@ -177,14 +179,14 @@
 	.scrollSwiper.ss-scrollhint:not(.ss-mobilebuttons, .ss-wrap)::before {
 		content: "";
 		display: block;
-		width: calc(var(--ssPadding) * 6);
-		height: var(--ssPadding);
+		width: calc(var(--ssPaddingInline) * 6);
+		height: var(--ssPaddingInline);
 		-webkit-mask-image: var(--ssButtonPrev);
 		mask-image: var(--ssButtonPrev);
 		background: linear-gradient(to right, transparent 33.3%, currentColor 50%, transparent 66.6%);
 		background-size: 300%;
 		position: absolute;
-		top: calc(var(--ssPadding) * -0);
+		top: calc(var(--ssPaddingBlock) * -0);
 		right: 0;
 		opacity: 1;
 		animation: scroll-hint 3.5s linear infinite;
@@ -213,13 +215,13 @@
 .scrollSwiper.ss-topbuttons:not(.ss-wrap) .ss-prev,
 .scrollSwiper.ss-topbuttons:not(.ss-wrap) .ss-next {
 	opacity: 0.15;
-	right: var(--ssPadding);
-	top: calc(var(--ssPadding) - 9px);
+	right: var(--ssPaddingInline);
+	top: calc(var(--ssPaddingBlock) * 0.25);
 	transform: translateY(-100%);
 }
 .scrollSwiper.ss-topbuttons:not(.ss-wrap) .ss-prev {
 	left: unset;
-	right: calc(var(--ssPadding) + var(--ssButtonSize) + 5px);
+	right: calc(var(--ssPaddingInline) + var(--ssButtonSize) + 5px);
 }
 /* TOP BUTTONS - END */
 
@@ -228,13 +230,13 @@
 	max-width: unset;
 }
 .scrollSwiper.ss-1tile.ss-fullwidth {
-	--ssPadding: 0px;
+	--ssPaddingInline: 0px;
 	--ssGap: 0px;
 	max-width: unset;
 }
 .scrollSwiper.ss-fullwidth:not(.ss-1tile) .ss-slides {
-	padding-inline: calc((100cqi - min(100cqi, var(--ssMaxWidth))) / 2 + var(--ssPadding));
-	scroll-padding-left: calc((100cqi - min(100cqi, var(--ssMaxWidth))) / 2 + var(--ssPadding));
+	padding-inline: calc((100cqi - min(100cqi, var(--ssMaxWidth))) / 2 + var(--ssPaddingInline));
+	scroll-padding-left: calc((100cqi - min(100cqi, var(--ssMaxWidth))) / 2 + var(--ssPaddingInline));
 }
 .scrollSwiper.ss-fullwidth.ss-topbuttons:not(.ss-1tile) .ss-prev,
 .scrollSwiper.ss-fullwidth.ss-topbuttons:not(.ss-1tile) .ss-next {
@@ -269,7 +271,7 @@
 	z-index: 1;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: calc(var(--ssPaginationBottom) + var(--ssPadding));
+	bottom: calc(var(--ssPaginationBottom) + var(--ssPaddingBlock));
 	height: var(--ssPaginationSize);
 	width: calc(var(--ssPaginationSize) * 2);
 	background-image: radial-gradient(ellipse at center, transparent calc(50% - 1px), white 50%, transparent calc(50% + 1px));

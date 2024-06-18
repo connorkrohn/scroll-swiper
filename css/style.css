@@ -1,22 +1,23 @@
 /* GENERAL CSS - START */
 
 :root {
-    --bgColor: white;
-    --textColor: black;
-    --btnColor: #f2f2f2;
-    --btnHover: #e5e5e5;
-    --globalMaxWidth: 1005px;
-	--globalPadding: clamp(9px, 2vw, 15px);
+  --bgColor: white;
+  --textColor: black;
+  --btnColor: #f2f2f2;
+  --btnHover: #e5e5e5;
+  --globalMaxWidth: 1005px;
+	--globalPaddingBlock: 15px;
+  --globalPaddingInline: clamp(9px, 2vw, 15px);
 	--globalRadius: 7px;
 	--globalProductTileMinWidth: 150px;
 }
 
 body {
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bgColor);
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bgColor);
 	color: var(--textColor);
 }
 
@@ -28,6 +29,7 @@ body * {
 }
 h1 {
 	font-size: 2rem;
+  margin-block-end: -0.21em;
 	font-weight: 900;
 }
 
@@ -35,8 +37,9 @@ h1 {
 	box-sizing: border-box;
 	max-width: var(--globalMaxWidth);
 	margin-inline: auto;
-	padding-inline: var(--globalPadding);
+	padding-inline: var(--globalPaddingInline);
 	margin-top: 1rem;
+  padding-inline-end: calc(2 * var(--globalPaddingInline) + 2 * var(--ssButtonSize, 30px) + 5px);
 }
 
 img {
