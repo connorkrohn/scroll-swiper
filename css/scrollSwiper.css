@@ -1,8 +1,8 @@
 /* SWIPERCSS - START */
 .scrollSwiper {
-	--ssMaxWidth: var(--globalMaxWidth);
-	--ssPadding: var(--globalPadding);
-	--ssGap: var(--globalPadding);
+	--ssMaxWidth: var(--globalMaxWidth, 1005px);
+	--ssPadding: var(--globalPadding, clamp(9px, 2vw, 15px));
+	--ssGap: var(--globalPadding, clamp(9px, 2vw, 15px));
 	--ssTilesMobile: 1.2;
 	--ssProductTilesMobile: 2.4;
 	--ssColor: var(--textColor);
@@ -63,6 +63,7 @@
 	scroll-snap-stop: normal;
 	width: var(--ssTileWidth, unset);
 	max-width: var(--ssTileMinWidth, unset);
+  box-sizing: border-box;
 }
 .scrollSwiper .ss-slides > *:empty {
 	display: none;
@@ -248,8 +249,12 @@
 	scroll-snap-type: x mandatory;
 }
 .scrollSwiper.ss-1tile .ss-slides > * {
+
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
+}
+.scrollSwiper.ss-fullwidth.ss-1tile .ss-slides > * {
+  border-radius: 0;
 }
 /* PAGINATION - START */
 .scrollSwiper.ss-1tile.ss-pagination {
