@@ -63,7 +63,7 @@ img {
 }
 
 div.btn {
-  min-height: min(300px, 20vh);
+  min-height: min(200px, 20vh);
 }
 
 /* DARK MODE */
