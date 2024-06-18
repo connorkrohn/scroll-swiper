@@ -45,6 +45,8 @@ img {
 }
 
 .btn {
+  display: grid;
+  place-items: center;
 	color: var(--textColor);
 	background: var(--btnColor);
 	border-radius: var(--globalRadius);
@@ -54,10 +56,14 @@ img {
 	cursor: pointer;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	white-space: nowrap;
+  text-align: center;
 }
 .btn:hover {
 	background: var(--btnHover);
+}
+
+div.btn {
+  min-height: min(300px, 20vh);
 }
 
 /* DARK MODE */
