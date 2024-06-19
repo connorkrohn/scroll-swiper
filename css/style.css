@@ -5,11 +5,22 @@
   --textColor: black;
   --btnColor: #f2f2f2;
   --btnHover: #e5e5e5;
-  --globalMaxWidth: 1005px;
+  --globalMaxWidth: 963px;
 	--globalPaddingBlock: 15px;
-  --globalPaddingInline: clamp(9px, 2vw, 15px);
+  --globalPaddingInline: 9px;
 	--globalRadius: 7px;
 	--globalProductTileMinWidth: 150px;
+}
+
+* {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-size: 13px; /* normalize browsers */
+  line-height: 1.16; /* normalize browsers */
+  font-weight: 400; /* normalize browsers */
+}
+@supports (font-variation-settings: normal) {
+  * { font-family: InterVariable, sans-serif; }
 }
 
 body {
@@ -21,16 +32,10 @@ body {
 	color: var(--textColor);
 }
 
-/* FONT */
-body,
-body * {
-	font-family: Inter, sans-serif;
-	font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
-}
 h1 {
 	font-size: 2rem;
   margin-block-end: -0.21em;
-	font-weight: 900;
+	font-weight: 700;
 }
 
 .cont {
@@ -55,7 +60,6 @@ img {
 	border-radius: var(--globalRadius);
 	border: none;
 	padding: 7px 10px;
-	font-weight: 500;
 	cursor: pointer;
 	text-overflow: ellipsis;
 	overflow: hidden;
