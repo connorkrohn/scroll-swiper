@@ -2,14 +2,14 @@
 .scrollSwiper {
 	--ssMaxWidth: var(--globalMaxWidth, 1005px);
 	--ssPaddingBlock: var(--globalPaddingBlock, 15px);
-  --ssPaddingInline: var(--globalPaddingInline, clamp(9px, 2vw, 15px));
-	--ssGap: var(--globalPadding, clamp(9px, 2vw, 15px));
+  --ssPaddingInline: var(--globalPaddingInline, 9px);
+	--ssGap: var(--globalPaddingInline, 9px);
 	--ssTilesMobile: 1.2;
 	--ssProductTilesMobile: 2.4;
 	--ssColor: var(--textColor);
 	--ssButtonSize: 30px;
 	--ssPaginationSize: 9px;
-	--ssPaginationBottom: clamp(5px, 1vw, 9px);
+	--ssPaginationBottom: 6px;
 	--ssButtonPrev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='5.5 5 10 10'%3E%3Cpath d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z'/%3E%3C/svg%3E");
 	--ssButtonNext: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4.5 5 10 10' fill='currentColor'%3E%3Cpath d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z' /%3E%3C/svg%3E ");
 	container-type: inline-size;
