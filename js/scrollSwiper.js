@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			scrollSwiper.addEventListener("mouseenter", scrollSwiperAutoplayPauseHandler);
 			scrollSwiper.addEventListener("mouseleave", scrollSwiperAutoplayPauseHandler);
 		}
-		setInterval(scrollSwiperAutoplay, 5000);
+		setInterval(scrollSwiperAutoplay, 4000);
 	}
 
 	// only observe swipers when buttons are wanted
