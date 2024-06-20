@@ -1,6 +1,6 @@
 /* SWIPERCSS - START */
 .scrollSwiper {
-	--ssMaxWidth: var(--globalMaxWidth, 1005px);
+	--ssMaxWidth: var(--globalMaxWidth, 963px); /* calculated from 9px inline padding and gaps with 6 tiles at 150px width */
 	--ssPaddingBlock: var(--globalPaddingBlock, 15px);
   --ssPaddingInline: var(--globalPaddingInline, 9px);
 	--ssGap: var(--globalPaddingInline, 9px);
