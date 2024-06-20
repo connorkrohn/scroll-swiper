@@ -37,11 +37,15 @@ const scrollSwiperNavigation = (element, direction, event) => {
 							scrollToFound = true;
 						}
 						if (scrollToFound) {
-							if (sumSlidesWidth + slide.boundingClientRect.width + ssGap - 1 > ssSlidesWidth - ssPaddingFullwidth * 2 + ssPadding) break;
+							if (sumSlidesWidth + slide.boundingClientRect.width + ssGap - 1 > ssSlidesWidth - ssPaddingFullwidth * 2 + ssPadding) {
+                scrollByLeft = slide.target // added to test scrollIntoView()
+                break;
+              } 
 							sumSlidesWidth += slide.boundingClientRect.width + ssGap;
 						}
 						prevIntersectionRatio = slide.intersectionRatio;
 					}
+          if(scrollByLeft <= 0) scrollByLeft = slides.pop().target // added to test scrollIntoView()
 					break;
 				case "next":
 					if (ssSlides.scrollWidth - ssSlides.scrollLeft - ssSlides.clientWidth < 1) {
@@ -52,13 +56,15 @@ const scrollSwiperNavigation = (element, direction, event) => {
 					for (const slide of slides) {
 						if (prevIntersectionRatio > 0 && slide.intersectionRatio < 1) {
 							scrollByLeft = slide.boundingClientRect.x - slide.rootBounds.x - ssPadding + 1;
+              scrollByLeft = slide.target // added to test scrollIntoView()
 							break;
 						}
 						prevIntersectionRatio = slide.intersectionRatio;
 					}
 					break;
 			}
-			if (!looping) ssSlides.scrollBy({ left: scrollByLeft, behavior: "smooth" });
+			// if (!looping) ssSlides.scrollBy({ left: scrollByLeft, behavior: "smooth" });
+      if (!looping) scrollByLeft.scrollIntoView({ scrollMode: 'if-needed', behavior: 'smooth', block: 'nearest', inline: 'start' })
 			observer.disconnect();
 		},
 		{
