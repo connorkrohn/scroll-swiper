@@ -101,7 +101,7 @@
 /* SET TILE WIDTHS - END */
 
 /* FREE SCROLLING ON TOUCH DEVICES - START */
-@media (pointer:coarse) and (hover:none) and (not(any-pointer: fine)) { /* TODO test reliability vs pointer: course */
+@media all and (pointer:coarse) and (hover:none) and (not (any-pointer: fine)) { /* TODO test reliability vs pointer: course */
 	.scrollSwiper .ss-slides {
 		scroll-snap-type: unset;
 	}
@@ -170,7 +170,7 @@
 	pointer-events: auto;
 }
 /* HIDE BUTTONS & SHOW SCROLL HINT ON TOUCH ONLY DEVICES */
-@media (pointer:coarse) and (hover:none) and (not(any-pointer: fine)) {
+@media all and (pointer:coarse) and (hover:none) and (not (any-pointer: fine)) {
 	.scrollSwiper:not(.ss-mobilebuttons, .ss-wrap) .ss-prev,
 	.scrollSwiper:not(.ss-mobilebuttons, .ss-wrap) .ss-next {
 		display: none;
@@ -242,7 +242,7 @@
 .scrollSwiper.ss-fullwidth.ss-topbuttons:not(.ss-1tile) .ss-next {
 	margin-right: calc((100cqi - min(100cqi, var(--ssMaxWidth))) / 2);
 }
-@media (pointer:coarse) and (hover:none) and (not(any-pointer: fine)) {
+@media all and (pointer:coarse) and (hover:none) and (not (any-pointer: fine)) {
 	.scrollSwiper.ss-fullwidth.ss-scrollhint:not(.ss-1tile, .ss-mobilebuttons, .ss-wrap)::before {
 		right: calc((100cqi - min(100cqi, var(--ssMaxWidth))) / 2);
 	}
