@@ -351,4 +351,13 @@
 }
 /* PAGINATION - END */
 /* FULLWIDTH - END */
+
+/* TITLE - START */
+.scrollSwiper .ss-title {
+  position: relative;
+  display: block;
+  margin: 0;
+
+}
+/* TITLE - END */
 /* SWIPERCSS - END */
